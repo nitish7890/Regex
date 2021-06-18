@@ -1,0 +1,22 @@
+import java.util.Scanner;
+import java.util.regex.Matcher;
+import java.util.regex.Pattern;
+public class PhoneNumberExample {
+   public static void main(String[] args) {
+      Scanner sc = new Scanner(System.in);
+      System.out.println("Enter your Phone number: ");
+      String phone = sc.next();
+      //Regular expression to accept valid phone number
+      String regex = "\\d{10}";
+      //Creating a pattern object
+      Pattern pattern = Pattern.compile(regex);
+      //Creating a Matcher object
+      Matcher matcher = pattern.matcher(phone);
+      //Verifying whether given phone number is valid
+      if(matcher.matches()) {
+         System.out.println("Given phone number is valid");
+      } else { 
+         System.out.println("Given phone number is not valid");
+      }
+   }
+}
